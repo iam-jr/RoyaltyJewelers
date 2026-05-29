@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Royalty Jewelers</title>
+  <meta name="theme-color" content="#0b1222" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Royalty Jewelers" />
+  <link rel="icon" type="image/svg+xml" href="assets/royalty-jewelers-logo.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/icon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icon-180.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css?v=2" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="site-nav container">
+      <a class="brand" href="#" aria-label="Royalty Jewelers home">
+        <img class="brand-logo" src="img/Royalty-Jewelers-logo.JPG" alt="Royalty Jewelers logo" width="44" height="44" />
+        <span class="brand-name">Royalty Jewelers</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+      <div class="nav-menu" id="nav-menu">
+        <a href="#gold">Gold Price</a>
+        <a href="#productos">Products</a>
+        <a href="#contacto">Contact</a>
+      </div>
+    </nav>
+    <div class="hero-content">
+      <span class="eyebrow">Gold buying & selling</span>
+      <h1>Royalty Jewelers</h1>
+      <p>Buy, sell and explore our gold and silver pieces with clear pricing and personalized service.</p>
+      <div class="hero-actions">
+        <a href="#gold" class="btn btn-primary">Check Gold Price</a>
+        <a href="#productos" class="btn btn-secondary">Browse Products</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section container about-section">
+      <div class="section-header">
+        <h2>About Us</h2>
+        <p>A trusted leader in gold buying and selling, offering personalized guidance and transparent rates.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <div class="about-highlight">
+            <p>Royalty Jewelers is a premium jewelry boutique specializing in gold, silver and fine jewelry transactions. We are committed to delivering secure, professional and transparent service at every step.</p>
+          </div>
+          <p>Our team includes certified jewelers and expert appraisers who use the best tools in the industry to ensure accurate evaluations.</p>
+          <ul class="about-list">
+            <li><strong>Professional appraisal:</strong> we accurately value gold, silver and precious stones.</li>
+            <li><strong>Instant purchase:</strong> cash or secure transfer payment at the time of sale.</li>
+            <li><strong>Exclusive sales:</strong> carefully curated pieces with premium quality and design.</li>
+            <li><strong>Personalized service:</strong> dedicated attention for both individual and business clients.</li>
+          </ul>
+        </div>
+        <div class="about-panels">
+          <article class="panel-card">
+            <h3>Mission</h3>
+            <p>To be the city's leading jewelry partner for precious metal transactions, providing clear prices and trusted expertise.</p>
+          </article>
+          <article class="panel-card">
+            <h3>Vision</h3>
+            <p>To expand our customer network by offering jewelry and appraisal services that exceed expectations in quality and security.</p>
+          </article>
+          <article class="panel-card">
+            <h3>Values</h3>
+            <p>Transparency, professionalism, safety, and human-centered service in every transaction.</p>
+          </article>
+        </div>
+      </div>
+      <div class="about-features">
+        <article class="feature-card">
+          <h4>Trust</h4>
+          <p>We follow clear protocols so every customer feels secure and supported.</p>
+        </article>
+        <article class="feature-card">
+          <h4>Experience</h4>
+          <p>Over 8 years in the market allow us to advise with speed and precision.</p>
+        </article>
+        <article class="feature-card">
+          <h4>Quality</h4>
+          <p>We select only pieces and materials of the highest available quality.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="gold" class="section container gold-section">
+      <div class="section-header">
+        <h2>Current Gold Price</h2>
+        <p>Check the gram value and calculate an instant purchase or sale estimate.</p>
+      </div>
+      <div class="gold-panel">
+        <div class="gold-info">
+          <p>Buy price</p>
+          <strong id="buy-price">$62.50</strong>
+          <p>Sell price</p>
+          <strong id="sell-price">$60.00</strong>
+          <p class="small-copy">Prices updated daily according to local market rates.</p>
+        </div>
+        <div class="calculator">
+          <label for="gold-grams">Gold grams</label>
+          <input type="number" id="gold-grams" min="0" step="0.1" value="5" />
+          <div class="actions-row">
+            <button id="calculate-buy" class="btn btn-primary">Calculate Buy</button>
+            <button id="calculate-sell" class="btn btn-secondary">Calculate Sell</button>
+          </div>
+          <div class="result" id="gold-result">Estimated total: <strong>$312.50</strong></div>
+        </div>
+      </div>
+      <div class="timeline">
+        <article class="timeline-step">
+          <span>1</span>
+          <div>
+            <h3>Evaluation</h3>
+            <p>Your piece is appraised with precision tools and certified experts.</p>
+          </div>
+        </article>
+        <article class="timeline-step">
+          <span>2</span>
+          <div>
+            <h3>Offer</h3>
+            <p>You receive a clear purchase proposal with a fair price per gram.</p>
+          </div>
+        </article>
+        <article class="timeline-step">
+          <span>3</span>
+          <div>
+            <h3>Payment</h3>
+            <p>Immediate payment by cash or secure transfer.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container services-section">
+      <div class="section-header">
+        <h2>Featured Services</h2>
+        <p>Comprehensive solutions for every customer, from appraisals to exclusive jewelry deliveries.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card">
+          <h3>Gold Purchase</h3>
+          <p>We pay cash or immediate transfer with transparent appraisals and instant results.</p>
+        </article>
+        <article class="service-card">
+          <h3>Jewelry Sales</h3>
+          <p>We offer high-quality gold and silver jewelry in modern and classic designs.</p>
+        </article>
+        <article class="service-card">
+          <h3>Professional Appraisal</h3>
+          <p>Expert evaluation of gold, silver, diamonds and antique pieces with personalized attention.</p>
+        </article>
+        <article class="service-card">
+          <h3>Repair & Maintenance</h3>
+          <p>Piece restoration, professional cleaning and custom adjustments.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="productos" class="section container product-section">
+      <div class="section-header">
+        <h2>Premium Products</h2>
+        <p>Carefully selected jewelry with design, quality and fair pricing for every occasion.</p>
+      </div>
+      <div class="product-grid">
+        <article class="product-card">
+          <div class="photo-placeholder">Ring</div>
+          <h3>18K Gold Ring</h3>
+          <p class="product-price">$1,250.00</p>
+          <p>18K yellow gold with a classic design and polished finish. Perfect for engagements or special gifts.</p>
+        </article>
+        <article class="product-card">
+          <div class="photo-placeholder">Chain</div>
+          <h3>14K Gold Chain</h3>
+          <p class="product-price">$980.00</p>
+          <p>Durable 14K gold chain for everyday wear with an elegant, timeless style.</p>
+        </article>
+        <article class="product-card">
+          <div class="photo-placeholder">Bracelet</div>
+          <h3>Silver Bracelet</h3>
+          <p class="product-price">$420.00</p>
+          <p>925 sterling silver with engraved details and a secure clasp. Ideal for formal occasions or gifts.</p>
+        </article>
+        <article class="product-card">
+          <div class="photo-placeholder">Earrings</div>
+          <h3>Rose Gold Earrings</h3>
+          <p class="product-price">$760.00</p>
+          <p>14K rose gold with a satin finish, modern and lightweight for everyday wear.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container gallery-section">
+      <div class="section-header">
+        <h2>Gallery</h2>
+        <p>Browse featured pieces and examples of our work in real photos.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item">Photo 1</div>
+        <div class="gallery-item">Photo 2</div>
+        <div class="gallery-item">Photo 3</div>
+        <div class="gallery-item">Photo 4</div>
+      </div>
+    </section>
+
+    <section class="section container testimonials-section">
+      <div class="section-header">
+        <h2>Testimonials</h2>
+        <p>What our customers say about their experience with Royalty Jewelers.</p>
+      </div>
+      <div class="testimonial-grid">
+        <article class="testimonial-card">
+          <p>"Excellent service and fair valuation. Selling my gold was fast and secure."</p>
+          <strong>Maria S.</strong>
+        </article>
+        <article class="testimonial-card">
+          <p>"I recommend Royalty Jewelers for their detailed attention and transparent pricing."</p>
+          <strong>Carlos T.</strong>
+        </article>
+        <article class="testimonial-card">
+          <p>"I bought an engagement ring and the quality exceeded my expectations."</p>
+          <strong>Laura G.</strong>
+        </article>
+      </div>
+    </section>
+
+    <section id="contacto" class="section container contact-section">
+      <div class="section-header">
+        <h2>Contact</h2>
+        <p>Schedule a visit, request a quote or receive personalized advice.</p>
+      </div>
+      <div class="contact-grid">
+        <article class="contact-card">
+          <p><strong>Address:</strong></p>
+          <p>Main Street 123, Downtown, Mexico City</p>
+          <p><strong>Phone:</strong></p>
+          <p>+52 55 1234 5678</p>
+          <p><strong>WhatsApp:</strong></p>
+          <p>+52 55 9876 5432</p>
+          <p><strong>Hours:</strong></p>
+          <p>Monday to Friday: 10:00 AM - 7:00 PM</p>
+          <p>Saturday: 10:00 AM - 3:00 PM</p>
+        </article>
+        <form class="contact-form" action="#" method="post">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="email@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us how we can help" required></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content container">
+      <div class="footer-col">
+        <p class="footer-brand">Royalty Jewelers</p>
+        <p>Specialists in gold buying and selling, professional appraisal and fine jewelry with trusted service.</p>
+      </div>
+      <div class="footer-col footer-links">
+        <a href="#gold">Gold Price</a>
+        <a href="#productos">Products</a>
+        <a href="#contacto">Contact</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-small">Business Hours</p>
+        <p>Monday to Friday: 10:00 AM - 7:00 PM</p>
+        <p>Saturday: 10:00 AM - 3:00 PM</p>
+      </div>
+    </div>
+    <div class="footer-note container">
+      <p>© 2026 Royalty Jewelers. All rights reserved. Appraisals and transactions with transparency and security.</p>
+    </div>
+  </footer>
+
+  <script src="script.js?v=2"></script>
+</body>
+</html>
