@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Royalty Jewelers</title>
+  <meta name="theme-color" content="#0b1222" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Royalty Jewelers" />
+  <link rel="icon" type="image/svg+xml" href="assets/royalty-jewelers-logo.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/icon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icon-180.png" />
+  <link rel="manifest" href="manifest.webmanifest?v=3" />
+  <link rel="stylesheet" href="style.css?v=1" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="site-nav container">
+      <a class="brand" href="#" aria-label="Royalty Jewelers home">
+        <img class="brand-logo" src="img/Royalty-Jewelers-logo.JPG" alt="Royalty Jewelers logo" width="44" height="44" />
+        <span class="brand-name">Royalty Jewelers</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+      <div class="nav-menu" id="nav-menu">
+        <a href="#gold">Gold Price</a>
+        <a href="#productos">Products</a>
+        <a href="#contacto">Contact</a>
+      </div>
+    </nav>
+    <div class="hero-content">
+      <span class="eyebrow">We Buy and Sell Gold</span>
+      <h1>Royalty Jewelers</h1>
+      <p>Buy or sell gold and silver with clear prices and friendly help.</p>
+      <div class="hero-actions">
+        <a href="#gold" class="btn btn-primary">Check Gold Price</a>
+        <a href="#productos" class="btn btn-secondary">Browse Products</a>
+      </div>
+      <figure class="hero-video-wrap">
+        <video class="hero-video" autoplay loop muted playsinline preload="auto" aria-label="Royalty Jewelers product video">
+          <source src="img/478ab11e-4b72-4ec4-88d1-611aa06b3a20(video).mov" />
+          Your browser does not support this video format.
+          <a href="img/478ab11e-4b72-4ec4-88d1-611aa06b3a20(video).mov" target="_blank" rel="noopener noreferrer">Open video</a>
+        </video>
+      </figure>
+    </div>
+  </header>
+
+  <main>
+    <section class="section container about-section">
+      <div class="section-header">
+        <h2>About Us</h2>
+        <p>We are a trusted local shop for buying and selling gold.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <div class="about-highlight">
+            <p>At Royalty Jewelers, we make every step simple, safe and clear.</p>
+          </div>
+          <p>Our team checks your items carefully and gives fair prices.</p>
+          <ul class="about-list">
+            <li><strong>Item check:</strong> we check gold, silver and stones.</li>
+            <li><strong>Fast payment:</strong> get paid in cash or transfer the same day.</li>
+            <li><strong>Quality products:</strong> we sell beautiful jewelry for daily use or gifts.</li>
+            <li><strong>Friendly service:</strong> clear support for every customer.</li>
+          </ul>
+        </div>
+        <div class="about-panels">
+          <article class="panel-card">
+            <h3>Mission</h3>
+            <p>Give honest prices and good service to every person.</p>
+          </article>
+          <article class="panel-card">
+            <h3>Vision</h3>
+            <p>Help more families with safe and simple jewelry services.</p>
+          </article>
+          <article class="panel-card">
+            <h3>Values</h3>
+            <p>Honesty, respect, safety and clear communication.</p>
+          </article>
+        </div>
+      </div>
+      <div class="about-features">
+        <article class="feature-card">
+          <h4>Trust</h4>
+          <p>We explain every step so you feel safe.</p>
+        </article>
+        <article class="feature-card">
+          <h4>Experience</h4>
+          <p>More than 8 years helping people buy and sell jewelry.</p>
+        </article>
+        <article class="feature-card">
+          <h4>Quality</h4>
+          <p>We choose strong, beautiful pieces with good materials.</p>
+        </article>
+      </div>
+      <div class="about-store-mobile" aria-label="Store image">
+        <img src="img/backgroundroyaltyjewelers.JPG" alt="Royalty Jewelers store" loading="lazy" decoding="async" />
+      </div>
+    </section>
+
+    <section id="gold" class="section container gold-section">
+      <div class="section-header">
+        <h2>Current Gold Price</h2>
+        <p>See today's gold price and calculate your total.</p>
+      </div>
+      <div class="gold-panel">
+        <div class="gold-info">
+          <p>Buy price</p>
+          <strong id="buy-price">$62.50</strong>
+          <p>Sell price</p>
+          <strong id="sell-price">$60.00</strong>
+          <p class="small-copy">Prices can vary depending on circumstances.</p>
+        </div>
+        <div class="calculator">
+          <label for="gold-grams">Gold grams</label>
+          <input type="number" id="gold-grams" min="0" step="0.1" value="5" />
+          <div class="actions-row">
+            <button id="calculate-buy" class="btn btn-primary">Calculate Buy</button>
+            <button id="calculate-sell" class="btn btn-secondary">Calculate Sell</button>
+          </div>
+          <div class="result" id="gold-result">Estimated total: <strong>$312.50</strong></div>
+        </div>
+      </div>
+      <div class="timeline">
+        <article class="timeline-step">
+          <span>1</span>
+          <div>
+            <h3>Evaluation</h3>
+            <p>We check your item and weight it.</p>
+          </div>
+        </article>
+        <article class="timeline-step">
+          <span>2</span>
+          <div>
+            <h3>Offer</h3>
+            <p>We give you a clear and fair price.</p>
+          </div>
+        </article>
+        <article class="timeline-step">
+          <span>3</span>
+          <div>
+            <h3>Payment</h3>
+            <p>If you accept, you get paid right away.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container services-section">
+      <div class="section-header">
+        <h2>Featured Services</h2>
+        <p>Simple services for buying, selling and caring for jewelry.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card">
+          <h3>Gold Purchase</h3>
+          <p>We buy your gold and pay the same day.</p>
+        </article>
+        <article class="service-card">
+          <h3>Jewelry Sales</h3>
+          <p>We sell gold and silver jewelry in many styles.</p>
+        </article>
+        <article class="service-card">
+          <h3>Professional Appraisal</h3>
+          <p>We check gold, silver, diamonds and old pieces.</p>
+        </article>
+        <article class="service-card">
+          <h3>Repair & Maintenance</h3>
+          <p>We clean, fix and adjust your jewelry.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="productos" class="section container product-section">
+      <div class="section-header">
+        <h2>Premium Products</h2>
+        <p>Beautiful jewelry with fair prices.</p>
+      </div>
+      <div class="product-grid">
+        <article class="product-card">
+          <figure class="product-image-wrap">
+            <img class="product-image" src="img/1e231079-e299-47b6-ac29-9eb77583ce44.JPG" alt="Royalty Jewelers featured ring collection" loading="lazy" decoding="async" />
+          </figure>
+          <h3>18K Gold Ring</h3>
+          <p>Classic 18K gold ring. Great for gifts and special moments.</p>
+        </article>
+        <article class="product-card">
+          <figure class="product-image-wrap">
+            <img class="product-image" src="img/5c951c8e-2b99-4d94-a91d-bc11ba3a3058.JPG" alt="Royalty Jewelers featured chain collection" loading="lazy" decoding="async" />
+          </figure>
+          <h3>14K Gold Chain</h3>
+          <p>Strong 14K gold chain for everyday use.</p>
+        </article>
+        <article class="product-card">
+          <figure class="product-image-wrap">
+            <img class="product-image" src="img/766ef2c0-bde4-4e9d-9a70-8f3b6f4ef5f1.JPG" alt="Royalty Jewelers featured bracelet collection" loading="lazy" decoding="async" />
+          </figure>
+          <h3>Silver Bracelet</h3>
+          <p>925 silver bracelet with a secure clasp. Nice for gifts.</p>
+        </article>
+        <article class="product-card">
+          <figure class="product-image-wrap">
+            <img class="product-image" src="img/969c831a-2c35-4683-accb-95189ebad8ac.JPG" alt="Royalty Jewelers featured earrings collection" loading="lazy" decoding="async" />
+          </figure>
+          <h3>Rose Gold Earrings</h3>
+          <p>Light 14K rose gold earrings for daily wear.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container gallery-section">
+      <div class="section-header">
+        <h2>Gallery</h2>
+        <p>See photos of our products and work.</p>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img class="gallery-photo" src="img/aabd4026-2fc7-4f04-84fc-a280e063cfa1.JPG" alt="Royalty Jewelers product gallery photo 1" loading="lazy" decoding="async" />
+        </figure>
+        <figure class="gallery-item">
+          <img class="gallery-photo" src="img/ce7b92ac-c53f-4eb0-a15a-be396fad016e.JPG" alt="Royalty Jewelers product gallery photo 2" loading="lazy" decoding="async" />
+        </figure>
+        <figure class="gallery-item">
+          <img class="gallery-photo" src="img/d599c0b0-3b2d-4a47-891f-9168c57a7041.JPG" alt="Royalty Jewelers product gallery photo 3" loading="lazy" decoding="async" />
+        </figure>
+        <figure class="gallery-item">
+          <img class="gallery-photo" src="img/d8226b60-f8b4-4b8d-a4fe-a0198e108085.JPG" alt="Royalty Jewelers product gallery photo 4" loading="lazy" decoding="async" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="section container testimonials-section">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+        <p>Quick answers to common questions before your visit.</p>
+      </div>
+      <div class="testimonial-grid">
+        <article class="testimonial-card">
+          <strong>Do I need an appointment?</strong>
+          <p>No appointment is required. You can walk in during business hours.</p>
+        </article>
+        <article class="testimonial-card">
+          <strong>How do you calculate the price?</strong>
+          <p>We check purity, weight and current market rate, then give you a clear offer.</p>
+        </article>
+        <article class="testimonial-card">
+          <strong>How do I get paid?</strong>
+          <p>If you accept the offer, we pay you the same day by cash or transfer.</p>
+        </article>
+        <article class="testimonial-card">
+          <strong>Can I bring damaged jewelry?</strong>
+          <p>Yes. We can evaluate broken or old pieces and still provide an offer.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contacto" class="section container contact-section">
+      <div class="section-header">
+        <h2>Contact</h2>
+        <p>Contact us for prices, questions or a store visit.</p>
+      </div>
+      <div class="contact-grid">
+        <article class="contact-card">
+          <p><strong>Address:</strong></p>
+          <p>615 N Main St Downtown Kissimmee, FL 34744</p>
+          <p><strong>Phone &amp; WhatsApp:</strong></p>
+          <p>(407) 230-1282</p>
+          <p><strong>Financing Available:</strong></p>
+          <p>No credit needed.</p>
+          <p><strong>Shipping:</strong></p>
+          <p>Available through the US &amp; PR.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content container">
+      <div class="footer-col">
+        <p class="footer-brand">Royalty Jewelers</p>
+        <p>We buy and sell gold, check jewelry and offer friendly service.</p>
+      </div>
+      <div class="footer-col footer-links">
+        <a href="#gold">Gold Price</a>
+        <a href="#productos">Products</a>
+        <a href="#contacto">Contact</a>
+      </div>
+      <div class="footer-col footer-social">
+        <a class="instagram-link" href="https://www.instagram.com/royaltyjeweleers.fl/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile royaltyjeweleers.fl">
+          <svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="igGrad" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0%" stop-color="#f58529" />
+                <stop offset="50%" stop-color="#dd2a7b" />
+                <stop offset="100%" stop-color="#515bd4" />
+              </linearGradient>
+            </defs>
+            <rect x="2" y="2" width="20" height="20" rx="6" fill="url(#igGrad)" />
+            <circle cx="12" cy="12" r="4.3" fill="none" stroke="#ffffff" stroke-width="1.9" />
+            <circle cx="17.2" cy="6.8" r="1.25" fill="#ffffff" />
+          </svg>
+          <span class="instagram-user">@royaltyjeweleers.fl</span>
+        </a>
+        <a class="footer-linktree" href="https://linktr.ee/royalryjewelers" target="_blank" rel="noopener noreferrer">linktr.ee/royalryjewelers</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-small">Business Hours</p>
+        <p>Always available online 24/7</p>
+      </div>
+    </div>
+    <div class="footer-note container">
+      <p>© 2026 Royalty Jewelers. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js?v=2"></script>
+</body>
+</html>
