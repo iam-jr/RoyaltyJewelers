@@ -8,6 +8,31 @@ const calculateBuyBtn = document.getElementById('calculate-buy');
 const calculateSellBtn = document.getElementById('calculate-sell');
 let activeCalculation = 'buy';
 
+const heroVideo = document.querySelector('.hero-video');
+
+function startHeroVideoWithSound() {
+  if (!heroVideo) return;
+
+  heroVideo.muted = false;
+  heroVideo.volume = 1;
+
+  heroVideo.play().catch(() => {
+    // Some mobile browsers block autoplay with sound until first user interaction.
+  });
+}
+
+function unlockHeroVideoSound() {
+  startHeroVideoWithSound();
+  window.removeEventListener('click', unlockHeroVideoSound);
+  window.removeEventListener('touchstart', unlockHeroVideoSound);
+  window.removeEventListener('keydown', unlockHeroVideoSound);
+}
+
+startHeroVideoWithSound();
+window.addEventListener('click', unlockHeroVideoSound, { once: true });
+window.addEventListener('touchstart', unlockHeroVideoSound, { once: true });
+window.addEventListener('keydown', unlockHeroVideoSound, { once: true });
+
 buyPriceEl.textContent = `$${buyPrice.toFixed(2)}`;
 sellPriceEl.textContent = `$${sellPrice.toFixed(2)}`;
 
