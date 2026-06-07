@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" sizes="512x512" href="assets/icon-512.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/icon-180.png" />
   <link rel="manifest" href="manifest.webmanifest?v=3" />
-  <link rel="stylesheet" href="style3.css?v=1" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="hero">
@@ -115,6 +115,11 @@
           <p class="small-copy">Prices can vary depending on circumstances.</p>
         </div>
         <div class="calculator">
+          <label for="gold-karat">Gold purity</label>
+          <div class="karat-toggle" id="gold-karat" role="group" aria-label="Select gold purity">
+            <button type="button" class="karat-btn" data-karat="10k" aria-pressed="false">10K</button>
+            <button type="button" class="karat-btn is-active" data-karat="14k" aria-pressed="true">14K</button>
+          </div>
           <label for="gold-grams">Gold grams</label>
           <input type="number" id="gold-grams" min="0" step="0.1" value="5" />
           <div class="actions-row">
@@ -186,6 +191,7 @@
           </figure>
           <h3>200gr Gold</h3>
           <p>Miami Cuban bracelet. Great for gifts and special moments.</p>
+          <button class="btn btn-primary buy-now-btn" data-product="200gr Gold - Miami Cuban bracelet" type="button">View Product</button>
         </article>
         <article class="product-card">
           <figure class="product-image-wrap">
@@ -193,6 +199,7 @@
           </figure>
           <h3>14K Gold Chain</h3>
           <p>Strong 14K gold chain for everyday use.</p>
+          <button class="btn btn-primary buy-now-btn" data-product="14K Gold Chain" type="button">View Product</button>
         </article>
         <article class="product-card">
           <figure class="product-image-wrap">
@@ -200,6 +207,7 @@
           </figure>
           <h3>Cuban Link Gold Chain</h3>
           <p>Thick luxury gold in style. Nice for high class in advance.</p>
+          <button class="btn btn-primary buy-now-btn" data-product="Cuban Link Gold Chain" type="button">View Product</button>
         </article>
         <article class="product-card">
           <figure class="product-image-wrap">
@@ -207,6 +215,7 @@
           </figure>
           <h3>Diamond Tennis Silver Chain</h3>
           <p>Silver Diamond iced-out for daily wear.</p>
+          <button class="btn btn-primary buy-now-btn" data-product="Diamond Tennis Silver Chain" type="button">View Product</button>
         </article>
       </div>
     </section>
@@ -315,6 +324,40 @@
       <p>© 2026 Royalty Jewelers. All rights reserved.</p>
     </div>
   </footer>
+
+  <button class="lang-float" id="lang-toggle" type="button" aria-label="Switch language to Spanish">ES</button>
+
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/14072301282?text=Hi%20Royalty%20Jewelers%2C%20I%20want%20more%20info%20about%20your%20products."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat on WhatsApp"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M12.03 2C6.5 2 2 6.35 2 11.73c0 1.86.55 3.67 1.6 5.22L2 22l5.27-1.54a10.2 10.2 0 0 0 4.76 1.2h.01c5.53 0 10.03-4.35 10.03-9.73C22.07 6.35 17.57 2 12.03 2Zm5.84 13.7c-.25.68-1.45 1.27-1.98 1.35-.5.07-1.12.1-1.81-.1-.42-.12-.96-.31-1.65-.6-2.9-1.2-4.8-4.14-4.95-4.34a4.08 4.08 0 0 1-.84-2.15c0-1.07.57-1.6.78-1.81.2-.2.46-.26.61-.26h.44c.14 0 .34-.05.53.4.2.5.69 1.7.75 1.83.06.13.1.28.02.46-.08.18-.12.29-.23.44-.12.15-.24.34-.34.45-.11.12-.23.26-.1.5.13.24.58.95 1.25 1.53.85.74 1.56.98 1.8 1.1.24.13.38.11.53-.06.14-.16.6-.67.77-.9.16-.22.33-.18.55-.1.23.08 1.45.67 1.7.79.25.12.42.18.48.29.06.1.06.63-.19 1.31Z" />
+    </svg>
+    <span>WhatsApp</span>
+  </a>
+
+  <div class="payment-modal" id="payment-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="payment-modal-title">
+    <div class="payment-modal-panel" role="document">
+      <button class="payment-modal-close" id="payment-modal-close" type="button" aria-label="Close payment options">&times;</button>
+      <h3 id="payment-modal-title">Selected Product</h3>
+      <div class="payment-modal-preview">
+        <figure class="payment-modal-image-wrap">
+          <img class="payment-modal-image" id="payment-modal-image" src="img/1e231079-e299-47b6-ac29-9eb77583ce44.JPG" alt="Selected product" />
+        </figure>
+        <div class="payment-modal-details">
+          <p class="payment-modal-product" id="payment-modal-product">Selected product</p>
+          <p class="payment-modal-description" id="payment-modal-description">Product details</p>
+        </div>
+      </div>
+      <div class="payment-options">
+        <a class="btn btn-secondary" id="pay-card" href="tel:+14072301282">Contact Us</a>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js?v=2"></script>
 </body>
