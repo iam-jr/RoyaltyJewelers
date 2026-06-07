@@ -22,6 +22,8 @@
 html {
 	overflow-x: hidden;
 	scroll-behavior: smooth;
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
 }
 
 body {
@@ -29,6 +31,7 @@ body {
 	color: var(--text);
 	line-height: 1.6;
 	min-height: 100dvh;
+	overflow-x: hidden;
 	background:
 		radial-gradient(circle at 8% 16%, rgba(225, 178, 79, 0.24), transparent 42%),
 		radial-gradient(circle at 92% 7%, rgba(255, 157, 102, 0.2), transparent 40%),
@@ -410,6 +413,43 @@ a {
 	margin-bottom: 0.85rem;
 }
 
+.karat-toggle {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.45rem;
+	margin-bottom: 0.85rem;
+}
+
+.karat-btn {
+	border: 1px solid rgba(225, 178, 79, 0.56);
+	border-radius: 12px;
+	background: rgba(5, 24, 38, 0.92);
+	color: #f8e9bf;
+	padding: 0.78rem 0.7rem;
+	font-weight: 800;
+	font-size: 1.02rem;
+	letter-spacing: 0.02em;
+	cursor: pointer;
+	transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.karat-btn:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 8px 18px rgba(0, 0, 0, 0.32);
+}
+
+.karat-btn.is-active {
+	background: linear-gradient(135deg, #f3d48b 0%, #d39b34 100%);
+	color: #2d1f04;
+	border-color: rgba(255, 232, 176, 0.95);
+	box-shadow: 0 10px 22px rgba(210, 155, 53, 0.36);
+}
+
+.karat-btn:focus-visible {
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(243, 212, 139, 0.24);
+}
+
 .actions-row {
 	display: flex;
 	flex-wrap: wrap;
@@ -478,6 +518,11 @@ a {
 
 .product-card {
 	transition: transform 0.24s ease, box-shadow 0.24s ease;
+}
+
+.buy-now-btn {
+	margin-top: 0.8rem;
+	width: 100%;
 }
 
 .product-card:hover {
@@ -551,6 +596,12 @@ a {
 .footer-linktree {
 	text-decoration: none;
 	border-bottom: 1px solid rgba(152, 190, 212, 0.45);
+	overflow-wrap: anywhere;
+}
+
+.instagram-user,
+.contact-card p {
+	overflow-wrap: anywhere;
 }
 
 .footer-links a:hover,
@@ -587,6 +638,164 @@ a {
 	color: #98bed4;
 }
 
+.whatsapp-float {
+	position: fixed;
+	right: 1rem;
+	bottom: 1rem;
+	z-index: 1400;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.78rem 0.95rem;
+	border-radius: 999px;
+	text-decoration: none;
+	background: linear-gradient(135deg, #27cf6a 0%, #13934a 100%);
+	color: #f4fff8;
+	font-weight: 800;
+	border: 1px solid rgba(226, 255, 239, 0.6);
+	box-shadow: 0 10px 22px rgba(12, 60, 34, 0.45);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lang-float {
+	position: fixed;
+	left: 1rem;
+	bottom: 1rem;
+	z-index: 1400;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 52px;
+	height: 46px;
+	padding: 0 0.8rem;
+	border-radius: 999px;
+	border: 1px solid rgba(228, 193, 110, 0.78);
+	background: linear-gradient(135deg, rgba(225, 178, 79, 0.25) 0%, rgba(211, 155, 52, 0.34) 100%);
+	color: #fff1cc;
+	font-family: "Syne", sans-serif;
+	font-size: 0.86rem;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	cursor: pointer;
+	box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+	backdrop-filter: blur(8px);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lang-float:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.46);
+}
+
+.whatsapp-float:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 14px 28px rgba(12, 60, 34, 0.6);
+}
+
+.whatsapp-float svg {
+	width: 22px;
+	height: 22px;
+}
+
+.payment-modal {
+	position: fixed;
+	inset: 0;
+	z-index: 1500;
+	display: grid;
+	place-items: center;
+	padding: max(0.8rem, env(safe-area-inset-top)) 1rem max(1rem, env(safe-area-inset-bottom));
+	background: rgba(2, 10, 16, 0.78);
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.payment-modal.open {
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+}
+
+.payment-modal-panel {
+	position: relative;
+	width: min(100%, 460px);
+	max-height: min(86vh, 640px);
+	overflow-y: auto;
+	border-radius: 16px;
+	border: 1px solid #6d5430;
+	background: linear-gradient(180deg, #10283f 0%, #0b1f31 100%);
+	padding: 1.2rem;
+	padding-right: 3rem;
+	box-shadow: 0 20px 42px rgba(0, 0, 0, 0.42);
+}
+
+.payment-modal-close {
+	position: absolute;
+	top: 0.6rem;
+	right: 0.65rem;
+	border: 1px solid rgba(225, 178, 79, 0.5);
+	background: rgba(255, 255, 255, 0.04);
+	color: #f7e7be;
+	border-radius: 8px;
+	width: 34px;
+	height: 34px;
+	cursor: pointer;
+	font-size: 1.2rem;
+	line-height: 1;
+}
+
+.payment-modal h3 {
+	font-family: "Syne", sans-serif;
+	font-size: 1.5rem;
+	margin-bottom: 0.45rem;
+}
+
+.payment-modal-product {
+	color: #b9d5e6;
+	margin-bottom: 0.45rem;
+	font-weight: 600;
+}
+
+.payment-modal-preview {
+	display: grid;
+	grid-template-columns: 116px 1fr;
+	gap: 0.8rem;
+	align-items: start;
+	margin-bottom: 0.9rem;
+}
+
+.payment-modal-image-wrap {
+	border-radius: 12px;
+	overflow: hidden;
+	border: 1px solid #6d5430;
+	background: #0a2236;
+}
+
+.payment-modal-image {
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+}
+
+.payment-modal-description {
+	color: #a8c8dc;
+	font-size: 0.95rem;
+}
+
+.payment-options {
+	display: grid;
+	gap: 0.65rem;
+}
+
+.payment-options .btn {
+	width: 100%;
+}
+
+body.modal-open {
+	overflow: hidden;
+}
+
 @media (max-width: 992px) {
 	.about-grid,
 	.gold-panel,
@@ -610,6 +819,17 @@ a {
 	.container,
 	.footer-content {
 		width: min(1160px, calc(100% - 1.2rem));
+	}
+
+	.brand {
+		min-width: 0;
+	}
+
+	.brand-name {
+		max-width: 56vw;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 
 	.site-nav {
@@ -692,6 +912,29 @@ a {
 	.actions-row .btn {
 		width: 100%;
 	}
+
+	.payment-modal {
+		place-items: center;
+		padding: max(0.8rem, env(safe-area-inset-top)) 0.5rem max(0.8rem, env(safe-area-inset-bottom));
+	}
+
+	.payment-modal-panel {
+		width: 100%;
+		max-height: 82vh;
+		border-radius: 16px;
+		padding: 1rem;
+		padding-right: 2.8rem;
+	}
+
+	body.modal-open .whatsapp-float {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	body.modal-open .lang-float {
+		opacity: 0;
+		pointer-events: none;
+	}
 }
 
 @media (max-width: 420px) {
@@ -701,10 +944,37 @@ a {
 	}
 
 	.brand-name {
-		font-size: 1.08rem;
+		font-size: 1rem;
+		max-width: 52vw;
 	}
 
 	.hero h1 {
 		font-size: clamp(2.1rem, 10.8vw, 2.95rem);
+	}
+
+	.whatsapp-float span {
+		display: none;
+	}
+
+	.whatsapp-float {
+		padding: 0.82rem;
+		right: 0.7rem;
+		bottom: 0.7rem;
+	}
+
+	.lang-float {
+		left: 0.7rem;
+		bottom: 0.7rem;
+		min-width: 48px;
+		height: 44px;
+		padding: 0 0.72rem;
+	}
+
+	.payment-modal-preview {
+		grid-template-columns: 1fr;
+	}
+
+	.payment-modal-panel {
+		max-height: 80vh;
 	}
 }
