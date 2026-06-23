@@ -74,6 +74,53 @@ a {
 	max-width: 62ch;
 }
 
+
+.sales-header {
+	margin-bottom: 1.8rem;
+	padding: 1.5rem 1.8rem;
+	background: linear-gradient(135deg, rgba(225, 178, 79, 0.08) 0%, rgba(255, 157, 102, 0.06) 100%);
+	border: 2px solid rgba(225, 178, 79, 0.3);
+	border-radius: 16px;
+	backdrop-filter: blur(10px);
+	box-shadow: 0 8px 32px rgba(225, 178, 79, 0.12);
+	position: relative;
+	overflow: hidden;
+}
+
+.sales-header::before {
+	content: "";
+	position: absolute;
+	top: -50%;
+	right: -50%;
+	width: 200%;
+	height: 200%;
+	background: radial-gradient(circle, rgba(225, 178, 79, 0.2) 0%, transparent 70%);
+	pointer-events: none;
+	z-index: 0;
+}
+
+.sales-header h2 {
+	font-family: "Syne", sans-serif;
+	font-size: clamp(2rem, 2.8vw, 3.3rem);
+	letter-spacing: 0.02em;
+	margin-bottom: 0.5rem;
+	background: linear-gradient(135deg, #f3d48b 0%, #ff9d66 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	font-weight: 800;
+	position: relative;
+	z-index: 1;
+}
+
+.sales-header p {
+	color: #c9e4f0;
+	max-width: 62ch;
+	position: relative;
+	z-index: 1;
+	font-weight: 500;
+}
+
 .hero {
 	position: relative;
 	overflow: hidden;
